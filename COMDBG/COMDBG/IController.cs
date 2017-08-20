@@ -39,12 +39,12 @@ using System.Timers;
 namespace COMDBG
 {
 
-    public class IController
+    public class Controller
     {
         ComModel comModel = new ComModel();
         IView view;
 
-        public IController(IView view)
+        public Controller(IView view)
         {
             this.view = view;
             view.SetController(this);

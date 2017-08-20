@@ -43,20 +43,10 @@ using System.Windows.Forms;
 
 namespace COMDBG
 {
-    public interface IView
-    {
-        void SetController(IController controller);
-        //Open serial port event
-        void OpenComEvent(Object sender, SerialPortEventArgs e);
-        //Close serial port event
-        void CloseComEvent(Object sender, SerialPortEventArgs e);
-        //Serial port receive data event
-        void ComReceiveDataEvent(Object sender, SerialPortEventArgs e);
-    }
 
     public partial class MainForm : Form, IView
     {
-        private IController controller;
+        private Controller controller;
         private int sendBytesCount = 0;
         private int receiveBytesCount = 0;
 
@@ -75,7 +65,7 @@ namespace COMDBG
         /// Set controller
         /// </summary>
         /// <param name="controller"></param>
-        public void SetController(IController controller)
+        public void SetController(Controller controller)
         {
             this.controller = controller;
         }
@@ -251,7 +241,7 @@ namespace COMDBG
                 {
                     receivetbx.AppendText("-");
                 }
-                receivetbx.AppendText(IController.Bytes2Hex(e.receivedBytes));
+                receivetbx.AppendText(Controller.Bytes2Hex(e.receivedBytes));
             }
             //update status bar
             receiveBytesCount += e.receivedBytes.Length;
@@ -354,7 +344,7 @@ namespace COMDBG
             {
                 //If hex radio checked
                 //send bytes to serial port
-                Byte[] bytes = IController.Hex2Bytes(sendText);
+                Byte[] bytes = Controller.Hex2Bytes(sendText);
                 sendbtn.Enabled = false;//wait return
                 flag = controller.SendDataToCom(bytes);
                 sendbtn.Enabled = true;
@@ -418,7 +408,7 @@ namespace COMDBG
                 {
                     return;
                 }
-                receivetbx.Text = IController.String2Hex(receivetbx.Text);
+                receivetbx.Text = Controller.String2Hex(receivetbx.Text);
             }
         }
 
@@ -435,7 +425,7 @@ namespace COMDBG
                 {
                     return;
                 }
-                receivetbx.Text = IController.Hex2String(receivetbx.Text);
+                receivetbx.Text = Controller.Hex2String(receivetbx.Text);
             }
         }
 
@@ -452,7 +442,7 @@ namespace COMDBG
                 {
                     return;
                 }
-                sendtbx.Text = IController.String2Hex(sendtbx.Text);
+                sendtbx.Text = Controller.String2Hex(sendtbx.Text);
                 addCRCcbx.Enabled = true;
             }
         }
@@ -470,7 +460,7 @@ namespace COMDBG
                 {
                     return;
                 }
-                sendtbx.Text = IController.Hex2String(sendtbx.Text);
+                sendtbx.Text = Controller.Hex2String(sendtbx.Text);
                 addCRCcbx.Enabled = false;
             }
         }
@@ -579,7 +569,7 @@ namespace COMDBG
             if (addCRCcbx.Checked)
             {
                 //Add 2 bytes CRC to the end of the data
-                Byte[] senddata = IController.Hex2Bytes(sendText);
+                Byte[] senddata = Controller.Hex2Bytes(sendText);
                 Byte[] crcbytes = BitConverter.GetBytes(CRC16.Compute(senddata));
                 sendText += "-" + BitConverter.ToString(crcbytes, 1, 1);
                 sendText += "-" + BitConverter.ToString(crcbytes, 0, 1);

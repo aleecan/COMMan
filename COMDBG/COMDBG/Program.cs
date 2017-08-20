@@ -49,7 +49,7 @@ namespace COMDBG
             Application.SetCompatibleTextRenderingDefault(false);
             MainForm view = new MainForm();
             view.StartPosition = FormStartPosition.CenterScreen;
-            IController controller = new IController(view);
+            Controller controller = new Controller(view);
             
             Application.Run(view);
         }
