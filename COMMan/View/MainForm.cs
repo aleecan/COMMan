@@ -1,6 +1,6 @@
 ﻿/**
  
- * Copyright (c) 2014-2015, Wenhuix, All rights reserved.
+ * Copyright (c) 2017, Xiaoyu, All rights reserved.
 
  * Redistribution and use in source and binary forms, with or without modification, 
  * are permitted provided that the following conditions are met:
@@ -12,7 +12,7 @@
  * this list of conditions and the following disclaimer in the documentation 
  * and/or other materials provided with the distribution.
 
- * Neither the name of COMDBG nor the names of its contributors may 
+ * Neither the name of COMMan nor the names of its contributors may 
  * be used to endorse or promote products derived from this software without 
  * specific prior written permission.
  * 
@@ -41,7 +41,7 @@ using System.IO.Ports;
 using System.Windows;
 using System.Windows.Forms;
 
-namespace COMDBG
+namespace COMMan
 {
 
     public partial class MainForm : Form, IView
@@ -57,8 +57,7 @@ namespace COMDBG
             this.statusTimeLabel.Text = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss");
             this.toolStripStatusTx.Text = "Sent: 0";
             this.toolStripStatusRx.Text = "Received: 0";
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
+           
         }
 
         /// <summary>

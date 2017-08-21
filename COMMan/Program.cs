@@ -1,6 +1,6 @@
 ﻿/**
  
- * Copyright (c) 2014-2015, Wenhuix, All rights reserved.
+ * Copyright (c) 2017, Xiaoyu, All rights reserved.
 
  * Redistribution and use in source and binary forms, with or without modification, 
  * are permitted provided that the following conditions are met:
@@ -12,7 +12,7 @@
  * this list of conditions and the following disclaimer in the documentation 
  * and/or other materials provided with the distribution.
 
- * Neither the name of COMDBG nor the names of its contributors may 
+ * Neither the name of COMMan nor the names of its contributors may 
  * be used to endorse or promote products derived from this software without 
  * specific prior written permission.
  * 
@@ -32,25 +32,26 @@
 
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
-namespace COMDBG
+namespace COMMan
 {
-    public partial class HelpForm : Form
+    static class Program
     {
-        public HelpForm()
+        /// <summary>
+        /// Entry point of the program
+        /// </summary>
+        [STAThread]
+        static void Main()
         {
-            InitializeComponent();
-        }
-
-        private void okbutton_Click(object sender, EventArgs e)
-        {
-            this.Close();
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            MainForm view = new MainForm();
+            view.StartPosition = FormStartPosition.CenterScreen;
+            Controller controller = new Controller(view);
+            
+            Application.Run(view);
         }
     }
 }

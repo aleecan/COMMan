@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace COMDBG.Properties
+namespace COMMan.Properties
 {
 
 

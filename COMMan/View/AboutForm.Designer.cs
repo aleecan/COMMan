@@ -1,4 +1,4 @@
-﻿namespace COMDBG
+﻿namespace COMMan
 {
     partial class AboutForm
     {
@@ -51,8 +51,7 @@
             this.richTextBox1.ReadOnly = true;
             this.richTextBox1.Size = new System.Drawing.Size(273, 82);
             this.richTextBox1.TabIndex = 27;
-            this.richTextBox1.Text = "COMDBG 1.1, By Wenhuix, 2014-2015\n\nMore information please refer to:\nhttp://wenhu" +
-    "ix.github.io/project/comdbg.html";
+            this.richTextBox1.Text = "COMMan 1.0 ,https://github.com/xiaoyuvax/COMMan";
             this.richTextBox1.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.richTextBox1_LinkClicked);
             // 
             // AboutForm

@@ -1,6 +1,9 @@
-[Serial port debug assistant](http://wenhuix.github.io/project/comdbg.html)
+[COMMan - Serial Port Manager]
 ======
-This tool is C# Serial port debug assistant. It can send and receive data from serial port. The most importment thing is that it is concise and NO AD!
+This application is forked from COMDBG(http://wenhuix.github.io/project/comdbg.html), and is to be enhanced to support multi serial ports.
+
+A C# Serial port console. It can send and receive data from multiple serial ports. 
+
 ### Note:
 1. In windows, Enter key repensented by "\r\n", So if you have pressed enter key, in string mode, the soft will send 0x10 0x0A two bytes to the serial port. In the Hex mode, the enter key character "\r\n" will be dropped. 
 2. If you want to input HEX directly, you should input like the following format:
@@ -35,9 +38,7 @@ This tool is C# Serial port debug assistant. It can send and receive data from s
 * 可切换Hex和String显示。
 * 可以附加2字节的CRC16校验码到发送内容的结尾，校验码由发送内容计算而来。
 * 当收到数据时可以自动回复发送窗口内容。
-* 界面简洁，代码开源。
-* 无附加依赖库。
 
-如果觉得还可以，请点个赞 :)
+
 
 ![Alt text](/../screenshot/Screenshot.jpg?raw=true "Screen shot")

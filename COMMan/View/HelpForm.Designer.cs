@@ -1,4 +1,4 @@
-﻿namespace COMDBG
+﻿namespace COMMan
 {
     partial class HelpForm
     {

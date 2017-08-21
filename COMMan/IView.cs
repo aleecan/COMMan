@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace COMDBG
+namespace COMMan
 {
     public interface IView
     {
